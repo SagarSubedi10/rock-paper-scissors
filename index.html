@@ -6,10 +6,9 @@
 
 
     function computerPlay(){
-
-    var computerSelection = 'rock';
-    return computerSelection; 
-
+    let options = ['rock', 'paper','scissor'];
+    let pick = options[(Math.floor(Math.random() * Math.floor(3))+1)];
+    return pick;
     }
 
 
