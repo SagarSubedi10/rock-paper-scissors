@@ -6,9 +6,15 @@
 
 
     function computerPlay(){
-    let options = ['rock', 'paper','scissor'];
-    let pick = options[(Math.floor(Math.random() * Math.floor(3))+1)];
-    return pick;
+    let pick = Math.floor(Math.random() * Math.floor(3))];
+    if (pick > .66){
+        return 'rock';
+    }
+    else if (pick < .33)
+        return 'paper';
+    }
+    else{
+        return 'scissor';
     }
 
 
@@ -47,6 +53,7 @@
     }
 
     const playerSelection = 'rock';
+    const computerSelection = computerPlay();
 
 </script>
 
