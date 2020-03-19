@@ -9,22 +9,26 @@
             }
             nav{
                 text-align: center;
+                padding-top: 1%;
             }
-            .box{
-                display: flex; 
-                flex-direction: column;
+            main{
+                display:flex;
             }
             .left{
                 justify-content: left;
                 text-align: left;
+                width: 25%
             }
             .mid{
                 justify-content: center;
                 text-align: center;
+                width: 50%;
+                padding-top:10%;
             }
             .right{
                 justify-content: right;
                 text-align: right;
+                width: 25%
             }
         </style>
         <script>
@@ -37,20 +41,24 @@
         </nav>
         <main>
         <div class="box"></div>
+
             <div class="left">
                 <h2>Human: </h2>
                 <p id="humanScore"></p>
             </div>
+
             <div class="mid">
                 <h3>Select an Option</h3>
                 <input type="image" src="rock.jpg" class="rock" width="100px">
                 <input type="image" src="paper.jpg" class="paper" width="100px">
                 <input type="image" src="scissor.jpg" class="scissor" width="100px">
             </div>
+
             <div class ="right">
                 <h2>Computer: </h2>
                 <p id="computerScore"></p>
             </div>
+
         </div>
             <div>
                 <p id="roundInfo"></p>
