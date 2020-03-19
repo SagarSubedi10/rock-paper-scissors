@@ -1,67 +1,33 @@
 <html>
+    <head>
+        <style>
 
-<head>
+        </style>
+        <script>
 
-<script>
-
-
-    function computerPlay(){
-    return 'rock';
-    }
-
-
-    function playRound(playerSelection, computerSelection){
-
-        if(playerSelection == 'rock'){
-            if(computerSelection =='rock'){
-                result ="Draw! Both selected rock"
-            } 
-            else if(computerSelection =='paper'){
-                result ='You Lose! Paper beats rock';
-            } 
-            else if(computerSelection =='scissoor'){
-                result ='You Win! Rock beats scissor';
-            }
-        }
-        if(playerSelection == 'paper'){
-            if(computerSelection =='rock'){
-                result ='You Win! Paper beats rock';
-            } else if(computerSelection =='paper'){
-                result ='Draw! Both selected paper';
-            } else if(computerSelection =='scissor'){
-                result ='You Lose! Scissor beats paper';
-            }
-        }
-        if(playerSelection == 'scissor'){
-            if(computerSelection =='rock'){
-                result ='You Lose! Rock beats scissor';
-            } else if(computerSelection =='paper'){
-                result ='You Win! Scissor beats paper';
-            } else if(computerSelection =='scissor'){
-                result ='Draw! Both selected scissor';
-            }
-        }
-        return result;
-    }
-
-    function game(){
-        playRound(playerSelection, computerSelection);
-        playRound(playerSelection, computerSelection);
-        playRound(playerSelection, computerSelection);
-        playRound(playerSelection, computerSelection);
-        playRound(playerSelection, computerSelection);
-    }
-
-    const playerSelection = 'rock';
-    const computerSelection = computerPlay();
-
-
-
-</script>
-
-</head>
-
-<body>
-</body>
-
-</html>
+        </script>
+    </head>
+    <body>
+        <nav>
+            <h1>Rock - Paper - Scissor</h1>
+        </nav>
+        <main>
+            <div class="left">
+                <h2>Human: </h2>
+                <p id="humanScore"></p>
+            </div>
+            <div class="mid">
+                <h3>Select an Option</h3>
+                <input type ="button" value ="rock">
+                <input type ="button" value ="paper">
+                <input type ="button" value ="scissor">
+                <p id="roundInfo"></p>
+                <p id="gameInfo"></p> 
+            </div>
+            <div class ="right">
+                <h2>Compuer: </h2>
+                <p id="computerScore"></p>
+            </div>
+        </main>
+    </body>
+</html>>
