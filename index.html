@@ -53,6 +53,124 @@
         </style>
         <script>
 
+            function computerPlay() {
+                let handOptions = ["ROCK", "PAPER", "SCISSORS"];
+                return handOptions[Math.floor(Math.random() * 3)];
+            }
+
+            function playRound(playerSelection) {
+                computerSelection = computerPlay();
+                if(playerSelection === "ROCK" && computerSelection === "SCISSORS") {
+                    msg2.textContent = `You win! Rock beats Scissors.`;
+                    playerScore++;
+                }
+                else if(playerSelection === "SCISSORS" && computerSelection === "ROCK") {
+
+                    msg2.textContent = `You lose! Rock beats Scissors.`;
+                    computerScore++;
+                }
+
+                if(playerSelection === "SCISSORS" && computerSelection === "PAPER") {
+                    msg2.textContent = `You win! Scissors beats Paper.`;
+                    playerScore++;
+                }
+                else if(playerSelection === "PAPER" && computerSelection === "SCISSORS") {
+                   msg2.textContent = `You lose! Scissors beats Paper.`;
+                    computerScore++;
+                }
+
+                if(playerSelection === "PAPER" && computerSelection === "ROCK") {
+                    msg2.textContent = `You win! Paper beats Rock.`;
+                    playerScore++;
+                }
+                else if(playerSelection === "ROCK" && computerSelection === "PAPER") {
+                    msg2.textContent = `You lose! Paper beats Rock.`;
+                    computerScore++;
+                }
+
+                if(playerSelection === computerSelection) {
+                    msg2.textContent = `Draw! You both played the same.`;
+                }
+                roundsPlayed++;
+                
+            }
+            function game() {
+                enableplaybtns();
+                start.disabled = true;
+                played === true ? playRound(playerSelection) : null;
+                humanScore.innerHTML = `<span class="highlights">${playerScore}/5</span>`;
+                computerScore.innerHTML = `<span class="highlights">${computerScore}/5</span>`;
+                round.innerHTML = `Rounds: = <span class="highlights">${roundsPlayed}</span>`;
+                if(playerScore >= 5) {
+                    scoreboard.textContent = 'Aang ceased the fire nation! Congratulations';
+                    resetGame();
+                }
+                else if(computerScore >= 5) {
+                    scoreboard.textContent = 'The fire nation attacked! You lose';
+                    resetGame();
+                }
+            }
+            function resetGame() {
+                msg.innerHTML = '&nbsp';
+                msg2.innerHTML = '&nbsp';
+                playerScore = 0;
+                computerScore = 0;
+                roundsPlayed = 0;
+                disableplaybtns();
+                played = false;
+                start.textContent = 'Play again!';
+                start.disabled = false;
+            }
+            function disableplaybtns() {
+                rock.disabled = true;
+                paper.disabled = true;
+                scissors.disabled = true;
+            }
+            function enableplaybtns() {
+                rock.disabled = false;
+                paper.disabled = false;
+                scissors.disabled = false;
+            }
+            const rock = document.querySelector('#rock');
+            const paper = document.querySelector('#paper');
+            const scissors = document.querySelector('#scissor');
+            const start = document.querySelector('#start');
+            const msg2 = document.querySelector('#msg2');
+            const humanScore = document.querySelector('#humanScore');
+            const computerScore = document.querySelector('#computerScore');
+            const round = document.querySelector('#round');
+
+            let roundsPlayed = 0;
+            let playerScore = 0;
+            let computerScore = 0;
+            let playerSelection;
+            let computerSelection;
+            let played = false;
+
+            msg2.setAttribute('style', 'white-space: pre;');
+            humanScore.setAttribute('style', 'white-space:pre;');
+            computerScore.setAttribute('style', 'white-space: pre;');
+
+            disableplaybtns();
+
+            rock.addEventListener('click', () => { 
+                playerSelection = 'ROCK';
+                played = true;
+                game();
+            });
+            paper.addEventListener('click', () => { 
+                playerSelection = 'PAPER';
+                played = true;
+                game();
+            });
+            scissors.addEventListener('click', () => { 
+                playerSelection = 'SCISSORS';
+                played = true; 
+                game();
+            });
+
+            start.addEventListener('click', () => { game() });
+
         </script>
     </head>
     <body>
@@ -66,11 +184,13 @@
 
             <div class="mid">
                 <h1>Water - Earth - Fire</h1>
-                <input type="button" value="Start Game">
+                <input type="button" value="Start Game" id="start">
                 <h3>Select an Element</h3>
-                <input type="image" src="paper.jpg" class="paper" width="150px">
-                <input type="image" src="rock.jpg" class="rock" width="150px">
-                <input type="image" src="scissor.jpg" class="scissor" width="150px">
+                <input type="image" src="paper.jpg" id="paper" width="150px">
+                <input type="image" src="rock.jpg" id="rock" width="150px">
+                <input type="image" src="scissor.jpg" id="scissor" width="150px">
+                <p id="msg2"></p>
+                <p id="round"></p>
                 
                 
             </div>
