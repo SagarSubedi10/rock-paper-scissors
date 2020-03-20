@@ -90,7 +90,7 @@
             }
             function game(){
                 for (i=0; i<5; i++){
-                    const playerSelection = 'rock';
+                    const playerSelection = prompt("Enter: [paper, rock, scissor]");
                     const computerSelection = computerPlay();
                     console.log(playRound(playerSelection, computerSelection));
                 }
