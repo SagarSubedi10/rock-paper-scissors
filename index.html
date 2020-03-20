@@ -95,6 +95,7 @@
                     console.log(playRound(playerSelection, computerSelection));
                 }
             }
+            document.getElementById("start").onclick = game();
 
 
         </script>
@@ -109,7 +110,8 @@
             </div>
 
             <div class="mid">
-                <h1>Water - Earth - Fire</h1>               
+                <h1>Water - Earth - Fire</h1>
+                <button value="Start Game" id="start"></button>               
                 <h3>Select an Element</h3>
             
                 <button> <img src="paper.jpg" width="150px" style="background-size: 100%;"> </button>
