@@ -52,6 +52,43 @@
             }
         </style>
         <script>
+            function computerPlay() {
+                let handOptions = ["rock", "paper", "scissor"];
+                return handOptions[Math.floor(Math.random() * 3)];
+            }
+            function playRound(playerSelection, computerSelection){
+                var results; 
+                if (playerSelection === computerSelection){
+                    results = 'Draw!'
+                }
+                if (playerSelection ==='rock'){
+                    if (computerSelection ==='paper'){
+                        results = 'You lose! Rock cannot beat paper'
+                    }
+                    if (computerSelection ==='scissor')}{
+                        results ='You win! Rock beats scissor'
+                    }
+                }
+                if (playerSelection ==='paper'){
+                    if (computerSelection ==='rock'){
+                        results = 'You win! Paper beats rock'
+                    }
+                    if (computerSelection ==='scissor')}{
+                        results ='You lose! paper cannot beat scissor'
+                    }
+                }
+                if (playerSelection ==='scissor'){
+                    if (computerSelection ==='paper'){
+                        results = 'You win! Scissor beat paper'
+                    }
+                    if (computerSelection ==='rock')}{
+                        results ='You lose! Scissor cannot beat rock'
+                    }
+                }
+                
+                return results;
+            }
+
 
         </script>
     </head>
