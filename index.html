@@ -13,6 +13,7 @@
             }
             main{
                 display:flex;
+                min-height: 100%;
             }
             .left{
                 justify-content: left;
@@ -20,7 +21,6 @@
                 width: 25%;
                 background-image: url(left.png);
                 background-size: contain;
-                background-repeat: no-repeat;
             }
             .mid{
                 justify-content: center;
@@ -34,7 +34,6 @@
                 width: 25%;
                 background-image: url(right.png);
                 background-size: contain;
-                background-repeat: no-repeat;
             }
             .mid > .rock{
                 padding-right: 30;
@@ -46,9 +45,6 @@
         </script>
     </head>
     <body>
-        <nav>
-            <h1>Water - Earth - Fire</h1>
-        </nav>
         <main>
         <div class="box"></div>
 
@@ -58,11 +54,11 @@
             </div>
 
             <div class="mid">
+                <h1>Water - Earth - Fire</h1>
                 <h3>Select an Element</h3>
-                <input type="image" src="paper.jpg" class="paper" width="100px">
-                <input type="image" src="rock.jpg" class="rock" width="100px">
-
-                <input type="image" src="scissor.jpg" class="scissor" width="100px">
+                <input type="image" src="paper.jpg" class="paper" width="150px">
+                <input type="image" src="rock.jpg" class="rock" width="150px">
+                <input type="image" src="scissor.jpg" class="scissor" width="150px">
             </div>
 
             <div class ="right">
