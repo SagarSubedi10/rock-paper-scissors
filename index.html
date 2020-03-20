@@ -103,8 +103,8 @@
                 compChoice.textContent = `The computer chose ${roundResult[2]}`;
                 roundActions.textContent = `Round ${round-1} result: ${roundResult[1]}`;
                 if (playerScore === 5 || computerScore ===5) declareWinner();
-                }
             }
+            
             function swapButtons() {
                 const buttonDiv = document.getElementById('buttons');
                 buttons.forEach(button => button.remove());
