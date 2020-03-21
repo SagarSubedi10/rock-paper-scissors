@@ -59,7 +59,7 @@
             function playRound(playerSelection, computerSelection){
                 var results; 
                 if (playerSelection === computerSelection){
-                    results = 'Draw!'
+                    results = 'You Draw!'
                 }
                 if (playerSelection ==='rock'){
                     if (computerSelection ==='paper'){
@@ -95,16 +95,17 @@
                     const playerSelection = prompt("Enter: [paper, rock, scissor]");
                     const computerSelection = computerPlay();
                     const winner = (playRound(playerSelection, computerSelection));
-                    if (winner.split("!")==='You win'){
+                    const newSub = winner.split(" ");
+                    if(newSub[1]==='win!'){
                         playerScore++;
                     }
-                    if (winner.split("!")==='You lose'){
+                    if(newSub[1]==='lose!'){
                         computerScore++;
                     }
                     document.getElementById("computerchoice").innerHTML = computerSelection;
+                    document.getElementById("playerScore").innerHTML = playerScore;
+                    document.getElementById("computerScore").innerHTML = computerScore;
                 }
-                document.getElementById("playerScore").innerHTML = playerScore;
-                document.getElementById("computerScore").innerHTML = computerScore;
             }
 
 
