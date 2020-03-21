@@ -140,9 +140,9 @@
                 <input type="button" value="Start Game" id="start" onclick="game();">             
                 <h3>Select an Element</h3>
             
-                <button> <img src="paper.jpg" width="150px" style="background-color: black;" onclick="playRound('paper', computerPlay());"> </button>
-                <button> <img src="rock.jpg" width="150px" style="background-color: black;" onclick="playRound('rock', computerPlay());"> </button>
-                <button> <img src="scissor.jpg" width="150px" style="background-color: black;" onclick="playRound('scissor', computerPlay());"> </button>
+                <button onclick="playRound('paper', computerPlay())> <img src="paper.jpg" width="150px" style="background-color: black;"> </button>
+                <button onclick="playRound('rock', computerPlay())> <img src="rock.jpg" width="150px" style="background-color: black;"> </button>
+                <button onclick="playRound('scissor', computerPlay())> <img src="scissor.jpg" width="150px" style="background-color: black;"> </button>
 
                 <div id="results">
                     <p id="computerchoice"></p>
