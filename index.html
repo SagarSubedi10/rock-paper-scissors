@@ -89,11 +89,22 @@
                 return results;
             }
             function game(){
+                const computerScore = 0;
+                const playerScore =0;
                 for (i=0; i<5; i++){
                     const playerSelection = prompt("Enter: [paper, rock, scissor]");
                     const computerSelection = computerPlay();
-                    console.log(playRound(playerSelection, computerSelection));
+                    const winner = (playRound(playerSelection, computerSelection));
+                    if (winner.split("!")==='You win'){
+                        playerScore++;
+                    }
+                    if (winner.split("!")==='You lose'){
+                        computerScore++;
+                    }
+                    document.getElementById("computerchoice").innerHTML = computerSelection;
                 }
+                document.getElementById("playerScore").innerHTML = playerScore;
+                document.getElementById("computerScore").innerHTML = computerScore;
             }
 
 
