@@ -25,6 +25,9 @@
             .left > h2{
                 padding-left: 35%;
             }
+            .left > p{
+                padding-left: 32.5%;
+            }
             .mid{
                 justify-content: center;
                 text-align: center;
@@ -44,6 +47,9 @@
                 background-size: contain;
             }
             .right > h2{
+                padding-right: 25%;
+            }
+            .right > p{
                 padding-right: 25%;
             }
             .mid > .rock{
@@ -96,7 +102,7 @@
                 round++;
 
                 document.getElementById("playerScore").innerHTML = playerPoints;
-                document.getElementById("roundNum").innerHTML = round;
+                document.getElementById("roundNum").innerHTML = "Round: "+round;
                 document.getElementById("info").innerHTML = results;
                 document.getElementById("computerScore").innerHTML = computerPoints;
 
