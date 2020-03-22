@@ -52,14 +52,71 @@
             }
         </style>
         <script>
-            function stuff(){
-                prompt("hi");
+            var round = 0;
+            var results;
+            var playerPoints = 0;
+            var computerPoints = 0;
+
+            function computerPlay() {
+                let handOptions = ["rock", "paper", "scissor"];
+                return handOptions[Math.floor(Math.random() * 3)];
             }
-            // finally got the image to be clickable now i just need to set up the javascript
-            // pass value of image selected as user player choice
-            // generate computer choice
-            // play round and then DOM relevant infrmation
-            // make sure ot use glbal variable for scores and etc
+            function playRound(playerSelection, computerSelection){
+                if(playerSelection === "rock" && computerSelection === "scissor") {
+                    results = "You lose! Earth gets burnt by fire";
+                    computerPoints++;
+                }
+                else if(playerSelection === "scissor" && computerSelection === "rock") {
+                    results = "You win! Fire burns the earth";
+                    playerPoints++;
+                   
+                }
+
+                if(playerSelection === "scissor" && computerSelection === "paper") {
+                    results = "You lose! Fire gets extingusted by water";
+                    computerPoints++;
+                }
+                else if(playerSelection === "paper" && computerSelection === "scissor") {
+                   results = "You win! Water defeats fire";
+                   playerPoints++;
+                }
+
+                if(playerSelection === "paper" && computerSelection === "rock") {
+                   results = "You lose! Water loses to earth";
+                   computerPoints++;
+                }
+                else if(playerSelection === "rock" && computerSelection === "paper") {
+                  results = "You win! Earth defeats water"
+                  playerPoints++;
+                }
+
+                if(playerSelection === computerSelection) {
+                    results = "The same elements cannot collide"
+                }
+                roundsPlayed++;
+
+                document.getElementById("playerScore").innerHTML = playerPoints;
+                document.getElementById("roundNum").innerHTML = round;
+                document.getElementById("info").innerHTML = results;
+                document.getElementById("computerScore").innerHTML = computerPoints;
+
+                if(playerPoints == 5){
+                    document.getElementById("endgame").innerHTML = "Player has defeated the computer! The battle is reset";
+                    playerPoints =0;
+                    computerPoints =0;
+                    round =0;
+                }
+                if(computerPoints ==5){
+                    document.getElementById("endgame").innerHTML = "Computer has defeated the player! The battle is reset";
+                    playerPoints =0;
+                    computerPoints =0;
+                    round =0;
+                }
+                
+
+                
+
+            }
         </script>
     </head>
     <body>
@@ -76,9 +133,13 @@
                 <input type="button" value="Start Game" id="start">            
                 <h3>Select an Element</h3>
 
-                <img src="paper.jpg" id="paper" style="width: 150px;" onclick="stuff()" />
-                <img src="rock.jpg" id="rock" style="width: 150px;" onclick="stuff()" />
-                <img src="scissor.jpg" id="scissor" style="width: 150px;" onclick="stuff()" />
+                <img src="paper.jpg" id="paper" style="width: 150px;" onclick="playRound('paper', computerPlay())" />
+                <img src="rock.jpg" id="rock" style="width: 150px;" onclick="playRound('rock', computerPlay())" />
+                <img src="scissor.jpg" id="scissor" style="width: 150px;" onclick="playRound('scissor', computerPlay())" />
+
+                <p id="roundNum"></p>
+                <p id="info"></p>
+                <p id="endgame"></p>
 
             </div>
 
