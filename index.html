@@ -52,9 +52,8 @@
             .right > p{
                 padding-right: 25%;
             }
-            .mid > .rock{
-                padding-right: 30;
-                padding-left: 30;
+            .middle{
+                padding: 5% 10% 10% 10%;
             }
         </style>
         <script>
@@ -140,7 +139,7 @@
                 <h3>Select an Element</h3>
 
                 <img src="paper.jpg" id="paper" style="width: 150px;" onclick="playRound('paper', computerPlay())" />
-                <img src="rock.jpg" id="rock" style="width: 150px;" onclick="playRound('rock', computerPlay())" />
+                <img src="rock.jpg" class="middle" id="rock" style="width: 150px;" onclick="playRound('rock', computerPlay())" />
                 <img src="scissor.jpg" id="scissor" style="width: 150px;" onclick="playRound('scissor', computerPlay())" />
 
                 <p id="roundNum"></p>
