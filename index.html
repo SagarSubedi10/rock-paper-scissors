@@ -144,9 +144,11 @@
                 <input type="button" value="Start Game" id="start" onclick="game();">             
                 <h3>Select an Element</h3>
             
-                <button id="paper"><img src="paper.jpg" onclick="getStuff()" width="150px"></button>
-                <button id="rock" onclick="getStuff()"><img src="rock.jpg"></button>
-                <button id="scissor" onclick="getStuff()"><img src="scissor.jpg"></button>
+                <input type="button" id="paper" onclick="getStuff()">
+                <input type="button" id="rock" onclick="getStuff()">
+                <input type="button" id="scissor" onclick="getStuff()">
+                <input type="image" src="paper.jpg" />
+                <input type="button" onclick="getStuff()" style="background-image:url('rock.jpg')"/>
 
                 <div id="results">
                     <p id="computerchoice"></p>
