@@ -52,6 +52,7 @@
             }
         </style>
         <script>
+            /*
             const playerScore;
             const computerScore;
             const roundNum;
@@ -106,7 +107,7 @@
                 // everytime you click an element (onclick) you DOM the output 
                 // local variables in the javascript are changed from functions
                 // within the element (onclick)
-               /* const computerScore = 0;
+               const computerScore = 0;
                 const playerScore =0;
                 for (i=0; i<5; i++){
                     const playerSelection = prompt("Enter: [paper, rock, scissor]");
@@ -120,9 +121,12 @@
                         computerScore++;
                     }
                 }
-                */
+                
             }
-
+            */
+            getStuff(){
+                document.getElementById("computerchoice").innerHTML = "Hello";
+            }
 
         </script>
     </head>
@@ -140,9 +144,9 @@
                 <input type="button" value="Start Game" id="start" onclick="game();">             
                 <h3>Select an Element</h3>
             
-                <button onclick="playRound('paper', computerPlay())> <img src="paper.jpg" width="150px" style="background-color: black;"> </button>
-                <button onclick="playRound('rock', computerPlay())> <img src="rock.jpg" width="150px" style="background-color: black;"> </button>
-                <button onclick="playRound('scissor', computerPlay())> <img src="scissor.jpg" width="150px" style="background-color: black;"> </button>
+                <button id="paper" onclick="getStuff()"><img src="paper.jpg"></button>
+                <button id="rock" onclick="getStuff()"><img src="rock.jpg"></button>
+                <button id="scissor" onclick="getStuff()"><img src="scissor.jpg"></button>
 
                 <div id="results">
                     <p id="computerchoice"></p>
