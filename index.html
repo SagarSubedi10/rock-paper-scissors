@@ -50,84 +50,14 @@
                 padding-right: 30;
                 padding-left: 30;
             }
+            .paper{
+                background-image: url("paper.jpg");
+            }
         </style>
         <script>
-            /*
-            const playerScore;
-            const computerScore;
-            const roundNum;
-
-            function computerPlay() {
-                let handOptions = ["rock", "paper", "scissor"];
-                return handOptions[Math.floor(Math.random() * 3)];
+            function stuff(){
+                prompt("hi");
             }
-            function playRound(playerSelection, computerSelection){
-                roundNum++;
-                var results; 
-                if (playerSelection === computerSelection){
-                    results = 'You Draw!'
-                }
-                if (playerSelection ==='rock'){
-                    if (computerSelection ==='paper'){
-                        results = 'You lose! Rock cannot beat paper'
-                        computerScore++;
-                    }
-                    if (computerSelection ==='scissor'){
-                        results ='You win! Rock beats scissor'
-                        playerScore++;
-                    }
-                }
-                if (playerSelection ==='paper'){
-                    if (computerSelection ==='rock'){
-                        results = 'You win! Paper beats rock'
-                        playerScore++;
-                    }
-                    if (computerSelection ==='scissor'){
-                        results ='You lose! paper cannot beat scissor'
-                        computerScore++;
-                    }
-                }
-                if (playerSelection ==='scissor'){
-                    if (computerSelection ==='paper'){
-                        results = 'You win! Scissor beat paper'
-                        playerScore++;
-                    }
-                    if (computerSelection ==='rock'){
-                        results ='You lose! Scissor cannot beat rock'
-                        computerScore++;
-                    }
-                }
-                document.getElementById("computerchoice").innerHTML = computerSelection;
-                document.getElementById("playerScore").innerHTML = playerScore;
-                document.getElementById("computerScore").innerHTML = computerScore;
-
-            }
-            function game(){
-                // disable all buttons and enable them with the start game button
-                // everytime you click an element (onclick) you DOM the output 
-                // local variables in the javascript are changed from functions
-                // within the element (onclick)
-               const computerScore = 0;
-                const playerScore =0;
-                for (i=0; i<5; i++){
-                    const playerSelection = prompt("Enter: [paper, rock, scissor]");
-                    const computerSelection = computerPlay();
-                    const winner = (playRound(playerSelection, computerSelection));
-                    const newSub = winner.split(" ");
-                    if(newSub[1]==='win!'){
-                        playerScore++;
-                    }
-                    if(newSub[1]==='lose!'){
-                        computerScore++;
-                    }
-                }
-                
-            }
-            */
-            getStuff(){
-                document.getElementById("computerchoice").innerHTML = "Hello";
-            }
-
         </script>
     </head>
     <body>
@@ -141,19 +71,11 @@
 
             <div class="mid">
                 <h1>Water - Earth - Fire</h1>
-                <input type="button" value="Start Game" id="start" onclick="game();">             
+                <input type="button" value="Start Game" id="start">            
                 <h3>Select an Element</h3>
-            
-                <input type="button" id="paper" onclick="getStuff()">
-                <input type="button" id="rock" onclick="getStuff()">
-                <input type="button" id="scissor" onclick="getStuff()">
-                <input type="image" src="paper.jpg" />
-                <input type="button" onclick="getStuff()" style="background-image:url('rock.jpg')"/>
 
-                <div id="results">
-                    <p id="computerchoice"></p>
-                    <p id="roundactions"></p>
-                </div>
+                <button onclick="stuff()" id="paper"></button>
+
             </div>
 
             <div class ="right">
